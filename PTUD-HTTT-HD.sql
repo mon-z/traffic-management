@@ -1,0 +1,244 @@
+use master
+go
+create database QuanLyGiaoThong
+go
+use QuanLyGiaoThong
+go
+create table DenGiaoThongs
+(
+	ma_den int identity primary key,
+	ten_den Nvarchar(100),
+
+)
+create table ChotGiaoThongs
+(
+	ma_ChotGT int identity primary key,
+	ten_chot_GT nvarchar(100),
+	edit int DEFAULT 0,
+	
+)
+create table Duongs
+(
+	ma_duong int identity primary key,
+	ten_duong nvarchar(100)
+)
+
+create table CT_Duong
+(
+	Ma_CT_duong int identity primary key,
+	ma_duong int,
+	phuong nvarchar(50),
+	quan nvarchar(50),
+
+	
+)
+create table NgaDuongs
+(
+	ma_nga_duong int identity primary key,
+	ma_chot_GT int,
+	ma_CT_duong int,
+	stt int,
+
+	constraint fk_NgaDuongs_ChotGiaoThongs foreign key (ma_chot_GT) references ChotGiaoThongs(ma_ChotGT),
+	constraint fk_NgaDuongs_CTDuongs foreign key (ma_CT_duong) references CT_Duong(ma_CT_duong)
+)
+create table CTDenGiaoThongs
+(
+	ma_ct_den int identity primary key,
+	ma_den int,
+	ma_nga_duong int,
+	do_ int DEFAULT 0,
+	xanh int DEFAULT 0,
+	vang int DEFAULT 0,
+	constraint fk_CTDenTinHieus_DenTinHieus foreign key (ma_den) references DenGiaoThongs(ma_den),
+	constraint fk_CTDenTinHieus_NgaDuongs foreign key (ma_nga_duong) references NgaDuongs(ma_nga_duong)
+)
+
+create table Cameras
+(
+	ma_camera int identity primary key,
+	ip_ nvarchar(16),
+	images nvarchar(200),
+	ma_nga_duong int,
+	ma_duong int,
+	stt int
+
+	constraint fk_Cameras_NgaDuongs foreign key (ma_nga_duong) references NgaDuongs(ma_nga_duong),
+	constraint fk_Cameras_Duongs foreign key (ma_duong) references Duongs(ma_duong)
+)
+
+create table TraCuuThongTins
+(
+	MaTraCuu int identity primary key,
+	ma_duong int,
+	ThoiGian date,
+	images nvarchar(200),
+
+	constraint fk_TraCuuThongTin_Duongs foreign key (ma_duong) references Duongs (ma_duong)
+)
+create table Camera_Backup
+(
+	ma_backup int identity primary key,
+	thoi_gian date,
+	ma_camera int,
+	images Nvarchar(200),
+
+	constraint fk_CameraBackup_Cameras foreign key (ma_camera) references Cameras(ma_camera)
+)
+
+create table DonCongAns
+(
+	ma_don_cong_an int identity primary key,
+	ten_don_cong_an varchar(200),
+	dia_chi nvarchar(200)
+)
+
+
+create table CongAns
+(
+	ma_cong_an int identity primary key,
+	email varchar(100),
+	pass_word varchar(20),
+	ho_ten varchar(100),
+	dia_chi nvarchar(200),
+	sdt varchar(15),
+	cmnd varchar(15),
+	ngaysinh date,
+	gioi_tinh varchar(3),
+	chuc_vu varchar(50),
+	noi_cong_tac int
+
+	constraint fk_CongAns_DonCongAns foreign key (noi_cong_tac) references DonCongAns(ma_don_cong_an)
+)
+
+create table Dans
+(
+	ma_dan int identity primary key,
+	email varchar(100),
+	pass_word varchar(20),
+	ho_ten varchar(100),
+	dia_chi nvarchar(200),
+	sdt varchar(15),
+	cmnd varchar(15),
+	ngaysinh date,
+	gioi_tinh varchar(3)
+)
+
+create table DanDangKies
+(
+	ma_dang_ky int identity primary key,
+	email varchar(100),
+	pass_word varchar(20),
+	ho_ten varchar(100),
+	dia_chi nvarchar(200),
+	sdt varchar(15),
+	cmnd varchar(15),
+	ngaysinh date,
+	gioi_tinh varchar(3),
+	nguoi_duyet int
+
+	constraint fk_DanDangKys_CongAns foreign key (nguoi_duyet) references CongAns(ma_cong_an)
+)
+
+create table Luats
+(
+	ma_luat int identity primary key,
+	ten_luat varchar(100),
+	noi_dung nvarchar(200),
+	ngay_ban_hanh date,
+	muc_xu_phat int
+)
+
+create table Xes
+(
+	bien_so_xe varchar(20) primary key,
+	chu_xe int,
+	nhan_hieu varchar(100),
+	mau_sac nvarchar(100),
+	so_khung varchar(20),
+	loai_phuong_tien nvarchar(50),
+	so_may varchar(20),
+	kich_thuoc_bao float,
+	kich_thuoc_thung_hang float,
+	khoi_luong_xe float,
+	khoi_luong_cho_phep float,
+	so_nguoi_cho_phep smallint,
+	khoi_luong_toan_bo_cho_phep float,
+	don_vi_kiem_dinh int,
+	ngay_kiem_dinh datetime,
+	so_ten_GCN varchar(20),
+	hinh_anh_xe varchar(100)
+
+	constraint fk_Xes_DonCongAns foreign key (don_vi_kiem_dinh) references DonCongAns(ma_don_cong_an),
+	constraint fk_Xess_Dans foreign key (chu_xe) references Dans(ma_dan)
+)
+
+create table XeDangKies
+(
+	ma_dang_ky int identity primary key,
+	chu_xe int,
+	nhan_hieu varchar(100),
+	loai_phuong_tien varchar(50),
+	hinh_anh_xe varchar(100),
+	nguoi_duyet int
+
+	constraint fk_Xes_Dans foreign key (chu_xe) references Dans(ma_dan),
+	constraint fk_Xes_CongAns foreign key (nguoi_duyet) references CongAns(ma_cong_an),
+)
+
+create table DoiChuXes
+(
+	ma_dang_ky int identity primary key,
+	bien_so_xe varchar(20),
+	chu_xe_cu int,
+	chu_xe_moi int,
+	ngay_chuyen_nhuong date,
+	nguoi_duyet int
+
+	constraint fk_Xes_ChuXeCus foreign key (chu_xe_cu) references Dans(ma_dan),
+	constraint fk_Xes_ChuXeMois foreign key (chu_xe_moi) references Dans(ma_dan),
+	constraint fk_DoiChuXes_Xes foreign key (bien_so_xe) references Xes(bien_so_xe),
+	constraint fk_DoiChuXes_CongAns foreign key (nguoi_duyet) references CongAns(ma_cong_an),
+)
+
+create table ViPhams
+(
+	ma_vi_pham int identity primary key,
+	nguoi_vi_pham int,
+	nguoi_xu_phat int,
+	xe_vi_pham varchar(20),
+	tien_phat_them int,
+	tong_tien_phat int,
+	thoi_gian_vi_pham datetime,
+	thoi_gian_xu_phat datetime,
+	noi_giam_giu_xe int,
+	flag_da_nop_phat bit
+
+	constraint fk_ViPhams_Dans foreign key (nguoi_vi_pham) references Dans(ma_dan),
+	constraint fk_ViPhams_CongAns foreign key (nguoi_xu_phat) references CongAns(ma_cong_an),
+	constraint fk_ViPhams_Xes foreign key (xe_vi_pham) references Xes(bien_so_xe),
+	constraint fk_ViPhams_DonCongAns foreign key (noi_giam_giu_xe) references DonCongAns(ma_don_cong_an)
+)
+
+create table ViPhamLuats
+(
+	ma_vi_pham_luat int identity primary key,
+	ma_luat int,
+	ma_vi_pham int,
+	mo_ta_vi_pham varchar(100)
+
+	constraint fk_ViPhamLuats_Luats foreign key (ma_luat) references Luats(ma_luat),
+	constraint fk_ViPhamLuats_ViPhams foreign key (ma_vi_pham) references ViPhams(ma_vi_pham)
+)
+
+create table PhieuNopPhats
+(
+	ma_phieu int identity primary key,
+	ma_vi_pham int,
+	flag_ship bit,
+	dia_chi_ship nvarchar(200),
+	ngay_nop_phat datetime,
+	flag_da_nhan_xe bit
+
+	constraint fk_PhieuNopPhats_ViPhams foreign key (ma_vi_pham) references ViPhams(ma_vi_pham)
+)
