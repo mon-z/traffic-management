@@ -89,7 +89,7 @@ create table Camera_Backup
 create table DonCongAns
 (
 	ma_don_cong_an int identity primary key,
-	ten_don_cong_an varchar(200),
+	ten_don_cong_an Nvarchar(200),
 	dia_chi nvarchar(200)
 )
 
@@ -97,15 +97,15 @@ create table DonCongAns
 create table CongAns
 (
 	ma_cong_an int identity primary key,
-	email varchar(100),
-	pass_word varchar(20),
-	ho_ten varchar(100),
+	email Nvarchar(100),
+	pass_word Nvarchar(20),
+	ho_ten Nvarchar(100),
 	dia_chi nvarchar(200),
-	sdt varchar(15),
-	cmnd varchar(15),
+	sdt Nvarchar(15),
+	cmnd Nvarchar(15),
 	ngaysinh date,
-	gioi_tinh varchar(3),
-	chuc_vu varchar(50),
+	gioi_tinh Nvarchar(3),
+	chuc_vu Nvarchar(50),
 	noi_cong_tac int
 
 	constraint fk_CongAns_DonCongAns foreign key (noi_cong_tac) references DonCongAns(ma_don_cong_an)
@@ -114,22 +114,22 @@ create table CongAns
 create table Dans
 (
 	ma_dan int identity primary key,
-	email varchar(100),
-	pass_word varchar(20),
-	ho_ten varchar(100),
+	email Nvarchar(100),
+	pass_word Nvarchar(20),
+	ho_ten Nvarchar(100),
 	dia_chi nvarchar(200),
-	sdt varchar(15),
-	cmnd varchar(15),
+	sdt Nvarchar(15),
+	cmnd Nvarchar(15),
 	ngaysinh date,
-	gioi_tinh varchar(3)
+	gioi_tinh Nvarchar(3)
 )
 
 create table DanDangKies
 (
 	ma_dang_ky int identity primary key,
-	email varchar(100),
-	pass_word varchar(20),
-	ho_ten varchar(100),
+	email Nvarchar(100),
+	pass_word Nvarchar(20),
+	ho_ten Nvarchar(100),
 	dia_chi nvarchar(200),
 	sdt varchar(15),
 	cmnd varchar(15),
@@ -143,7 +143,7 @@ create table DanDangKies
 create table Luats
 (
 	ma_luat int identity primary key,
-	ten_luat varchar(100),
+	ten_luat Nvarchar(100),
 	noi_dung nvarchar(200),
 	ngay_ban_hanh date,
 	muc_xu_phat int
@@ -151,13 +151,13 @@ create table Luats
 
 create table Xes
 (
-	bien_so_xe varchar(20) primary key,
+	bien_so_xe Nvarchar(20) primary key,
 	chu_xe int,
-	nhan_hieu varchar(100),
+	nhan_hieu Nvarchar(100),
 	mau_sac nvarchar(100),
-	so_khung varchar(20),
+	so_khung Nvarchar(20),
 	loai_phuong_tien nvarchar(50),
-	so_may varchar(20),
+	so_may Nvarchar(20),
 	kich_thuoc_bao float,
 	kich_thuoc_thung_hang float,
 	khoi_luong_xe float,
@@ -166,8 +166,8 @@ create table Xes
 	khoi_luong_toan_bo_cho_phep float,
 	don_vi_kiem_dinh int,
 	ngay_kiem_dinh datetime,
-	so_ten_GCN varchar(20),
-	hinh_anh_xe varchar(100)
+	so_ten_GCN Nvarchar(20),
+	hinh_anh_xe Nvarchar(100)
 
 	constraint fk_Xes_DonCongAns foreign key (don_vi_kiem_dinh) references DonCongAns(ma_don_cong_an),
 	constraint fk_Xess_Dans foreign key (chu_xe) references Dans(ma_dan)
@@ -177,9 +177,9 @@ create table XeDangKies
 (
 	ma_dang_ky int identity primary key,
 	chu_xe int,
-	nhan_hieu varchar(100),
-	loai_phuong_tien varchar(50),
-	hinh_anh_xe varchar(100),
+	nhan_hieu Nvarchar(100),
+	loai_phuong_tien Nvarchar(50),
+	hinh_anh_xe Nvarchar(100),
 	nguoi_duyet int
 
 	constraint fk_Xes_Dans foreign key (chu_xe) references Dans(ma_dan),
@@ -189,7 +189,7 @@ create table XeDangKies
 create table DoiChuXes
 (
 	ma_dang_ky int identity primary key,
-	bien_so_xe varchar(20),
+	bien_so_xe Nvarchar(20),
 	chu_xe_cu int,
 	chu_xe_moi int,
 	ngay_chuyen_nhuong date,
@@ -206,7 +206,7 @@ create table ViPhams
 	ma_vi_pham int identity primary key,
 	nguoi_vi_pham int,
 	nguoi_xu_phat int,
-	xe_vi_pham varchar(20),
+	xe_vi_pham Nvarchar(20),
 	tien_phat_them int,
 	tong_tien_phat int,
 	thoi_gian_vi_pham datetime,
@@ -225,7 +225,7 @@ create table ViPhamLuats
 	ma_vi_pham_luat int identity primary key,
 	ma_luat int,
 	ma_vi_pham int,
-	mo_ta_vi_pham varchar(100)
+	mo_ta_vi_pham Nvarchar(100)
 
 	constraint fk_ViPhamLuats_Luats foreign key (ma_luat) references Luats(ma_luat),
 	constraint fk_ViPhamLuats_ViPhams foreign key (ma_vi_pham) references ViPhams(ma_vi_pham)
