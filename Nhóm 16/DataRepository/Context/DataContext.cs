@@ -11,7 +11,7 @@ namespace DataRepository.Context
 {
     public class DataContext : DbContext
     {
-        public DataContext() : base("TrichXuatCameraConnection")
+        public DataContext() : base("ChotGTConnection")
         {
         }
 
