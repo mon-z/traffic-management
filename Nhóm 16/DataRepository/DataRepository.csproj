@@ -10,11 +10,12 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DataRepository</RootNamespace>
     <AssemblyName>DataRepository</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -51,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Context\DataContext.cs" />
     <Compile Include="entity\Camera.cs" />
     <Compile Include="entity\Camera_Backup.cs" />
     <Compile Include="entity\ChotGiaoThong.cs" />
@@ -71,6 +73,8 @@
     <Compile Include="entity\ViPhamLuat.cs" />
     <Compile Include="entity\Xe.cs" />
     <Compile Include="entity\XeDangKy.cs" />
+    <Compile Include="Impl\Camera_Backup_Repository.cs" />
+    <Compile Include="IRepository.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="entity\TraCuuThongTin.cs" />
