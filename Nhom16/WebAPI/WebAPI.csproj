@@ -179,6 +179,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LuatsController.cs" />
     <Compile Include="Controllers\PhieuNopPhatsController.cs" />
+    <Compile Include="Controllers\ThongtinController.cs" />
     <Compile Include="Controllers\TraCuuThongTinsController.cs" />
     <Compile Include="Controllers\ViPhamLuatsController.cs" />
     <Compile Include="Controllers\ViPhamsController.cs" />
