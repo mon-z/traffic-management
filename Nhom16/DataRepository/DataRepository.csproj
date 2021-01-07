@@ -56,7 +56,6 @@
     <Compile Include="entity\Camera.cs" />
     <Compile Include="entity\Camera_Backup.cs" />
     <Compile Include="entity\ChotGiaoThong.cs" />
-    <Compile Include="entity\ChotGTContext.cs" />
     <Compile Include="entity\PhieuNopPhat.cs" />
     <Compile Include="entity\CongAn.cs" />
     <Compile Include="entity\CTDenGiaoThong.cs" />

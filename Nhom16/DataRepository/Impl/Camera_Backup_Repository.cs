@@ -34,7 +34,7 @@ namespace DataRepository.Impl
 
         public IList<Camera_Backup> Read()
         {
-            return context.Camera_Backups.ToList();
+            return context.Camera_Backup.ToList();
         }
 
         public int Update(Camera_Backup t)

@@ -138,6 +138,39 @@ namespace WebAPI.Controllers
         }
 
 
+        // GET: api/Thongtin/id/image
+        public IHttpActionResult Get(int id, string image)
+        {
+            IList<Camera_Backup> camera_Backups = repo.Read();
+            ThongtinModel model = new ThongtinModel();
+            foreach (Camera_Backup camera in camera_Backups)
+            {
+                if (camera.ma_camera == id && camera.images == image)
+                {
+                    ThongtinModel.Detail d = new ThongtinModel.Detail()
+                    {
+                        camera_id = camera.ma_camera,
+                        image = camera.images,
+                        thoi_gian = camera.thoi_gian,
+                        TenDuong = camera.Duong.ten_duong,
+
+                    };
+                    model.details.Add(d);
+                }
+            }
+            if (model == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(model);
+        }
+
+
+
+
+
+
 
         // GET: api/Thongtin
         //public IEnumerable<string> Get()
