@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:nc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             nc:Ignorable="d"
+             x:Class="App1.MainPage">
+
+    <StackLayout Padding="0">
+        <Grid>
+            <StackLayout Padding="0" Margin="0">
+                <Frame BackgroundColor="LightPink" HeightRequest="200" HorizontalOptions="FillAndExpand">
+                </Frame>
+            </StackLayout>
+            <StackLayout Margin="15,150,15,0">
+                <Frame BackgroundColor="WhiteSmoke" BorderColor="DimGray" HasShadow="True" HeightRequest="328" HorizontalOptions="FillAndExpand">
+                    <StackLayout>
+                        <StackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="DANG NHAP" TextColor="Black" FontSize="Large" FontAttributes="Bold" />
+                        </StackLayout>
+
+                        <StackLayout Margin="0,20,0,0">
+                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                <StackLayout Orientation="Horizontal">
+                                    <Entry x:Name="email" Placeholder="Email" TextColor="HotPink" HorizontalOptions="FillAndExpand" Margin="20,0,20,0"></Entry>
+                                </StackLayout>
+                            </Frame>
+                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0,15,0,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                <StackLayout Orientation="Horizontal">
+                                    <Entry x:Name="password" Placeholder="Password" IsPassword="True" TextColor="HotPink" HorizontalOptions="FillAndExpand" Margin="20,0,20,0"></Entry>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                        <Button Text="DANG NHAP" BackgroundColor="Purple" TextColor="White" Margin="0,10,0,0" FontAttributes="Bold" CornerRadius="30" Clicked="OnLogin"/>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,15,0,0">
+                            <Label Text="Chua co tai khoan ? " HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                            <Label Text="Dang ky" HorizontalTextAlignment="Center" TextColor="HotPink"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,15,0,0">
+                            <Label x:Name="fail" FontSize="Medium" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </StackLayout>
+</ContentPage>
