@@ -9,15 +9,14 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using DataRepository;
+using DataRepository.Context;
 using DataRepository.entity;
 
 namespace WebAPI.Controllers
 {
     public class NgaDuongsbyMaChotController : ApiController
     {
-        private ChotGTContext db = new ChotGTContext();
-
-
+        private DataContext db = new DataContext();
 
         // GET: api/NgaDuongsbyMaChot/5
         [ResponseType(typeof(NgaDuong))]

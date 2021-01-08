@@ -1,4 +1,5 @@
 ﻿using DataRepository;
+using DataRepository.Context;
 using DataRepository.entity;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace WebAPI.Controllers
 {
     public class ChotGiaoThongDetailController : ApiController
     {
-        private ChotGTContext db = new ChotGTContext();
+        private DataContext db = new DataContext();
 
         [ResponseType(typeof(ChotGiaoThongDetail))]
         public IHttpActionResult GetChotGTDetail(int id)
