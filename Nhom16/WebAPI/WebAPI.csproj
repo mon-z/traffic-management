@@ -166,6 +166,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\CamerasController.cs" />
     <Compile Include="Controllers\Camera_BackupController.cs" />
+    <Compile Include="Controllers\ChotGiaoThongDetailController.cs" />
     <Compile Include="Controllers\ChotGiaoThongsController.cs" />
     <Compile Include="Controllers\CongAnsController.cs" />
     <Compile Include="Controllers\CTDenGiaoThongsController.cs" />
@@ -178,6 +179,8 @@
     <Compile Include="Controllers\DuongsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LuatsController.cs" />
+    <Compile Include="Controllers\NgaDuongsbyMaChotController.cs" />
+    <Compile Include="Controllers\NgaDuongsController.cs" />
     <Compile Include="Controllers\PhieuNopPhatsController.cs" />
     <Compile Include="Controllers\TraCuuThongTinsController.cs" />
     <Compile Include="Controllers\ViPhamLuatsController.cs" />
@@ -187,6 +190,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ChotGiaoThongDetail.cs" />
+    <Compile Include="Models\NgaDuongss.cs" />
     <Compile Include="Models\ThongtinModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -22,3 +22,15 @@ E:\SLIDE\PTUD HTTT HD\traffic-management\traffic-management\Nhóm 16\DataReposit
 E:\SLIDE\PTUD HTTT HD\traffic-management\traffic-management\Nhóm 16\DataRepository\obj\Debug\DataRepository.csproj.CopyComplete
 E:\SLIDE\PTUD HTTT HD\traffic-management\traffic-management\Nhóm 16\DataRepository\obj\Debug\DataRepository.dll
 E:\SLIDE\PTUD HTTT HD\traffic-management\traffic-management\Nhóm 16\DataRepository\obj\Debug\DataRepository.pdb
+E:\SLIDE\PTUD HTTT HD\traffic-management\traffic-management\Nhom16\DataRepository\bin\Debug\DataRepository.dll.config
+E:\SLIDE\PTUD HTTT HD\traffic-management\traffic-management\Nhom16\DataRepository\bin\Debug\DataRepository.dll
+E:\SLIDE\PTUD HTTT HD\traffic-management\traffic-management\Nhom16\DataRepository\bin\Debug\DataRepository.pdb
+E:\SLIDE\PTUD HTTT HD\traffic-management\traffic-management\Nhom16\DataRepository\bin\Debug\EntityFramework.dll
+E:\SLIDE\PTUD HTTT HD\traffic-management\traffic-management\Nhom16\DataRepository\bin\Debug\EntityFramework.SqlServer.dll
+E:\SLIDE\PTUD HTTT HD\traffic-management\traffic-management\Nhom16\DataRepository\bin\Debug\EntityFramework.xml
+E:\SLIDE\PTUD HTTT HD\traffic-management\traffic-management\Nhom16\DataRepository\bin\Debug\EntityFramework.SqlServer.xml
+E:\SLIDE\PTUD HTTT HD\traffic-management\traffic-management\Nhom16\DataRepository\obj\Debug\DataRepository.csprojAssemblyReference.cache
+E:\SLIDE\PTUD HTTT HD\traffic-management\traffic-management\Nhom16\DataRepository\obj\Debug\DataRepository.csproj.CoreCompileInputs.cache
+E:\SLIDE\PTUD HTTT HD\traffic-management\traffic-management\Nhom16\DataRepository\obj\Debug\DataRepository.csproj.CopyComplete
+E:\SLIDE\PTUD HTTT HD\traffic-management\traffic-management\Nhom16\DataRepository\obj\Debug\DataRepository.dll
+E:\SLIDE\PTUD HTTT HD\traffic-management\traffic-management\Nhom16\DataRepository\obj\Debug\DataRepository.pdb

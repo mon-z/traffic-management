@@ -22,6 +22,19 @@ namespace WebAPI.Controllers
         {
             return db.ChotGiaoThong;
         }
+        [ResponseType(typeof(ChotGiaoThong))]
+        public IHttpActionResult GetChotGiaoThong(string name)
+        {
+            string sql = "select * from ChotGiaoThongs where ten_chot_GT like N'%" + name + "%'";
+
+            var chotGiaoThong = db.ChotGiaoThong.SqlQuery(sql);
+            if (chotGiaoThong == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(chotGiaoThong);
+        }
 
         // GET: api/ChotGiaoThongs/5
         [ResponseType(typeof(ChotGiaoThong))]
