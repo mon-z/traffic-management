@@ -9,13 +9,14 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using DataRepository;
+using DataRepository.Context;
 using DataRepository.entity;
 
 namespace WebAPI.Controllers
 {
     public class Camera_BackupController : ApiController
     {
-        private ChotGTContext db = new ChotGTContext();
+        private DataContext db = new DataContext();
 
         // GET: api/Camera_Backup
         public IQueryable<Camera_Backup> GetCamera_Backup()

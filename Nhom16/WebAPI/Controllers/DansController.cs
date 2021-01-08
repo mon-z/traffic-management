@@ -8,13 +8,14 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using DataRepository.Context;
 using DataRepository.entity;
 
 namespace WebAPI.Controllers
 {
     public class DansController : ApiController
     {
-        private ChotGTContext db = new ChotGTContext();
+        private DataContext db = new DataContext();
 
         // GET: api/Dans
         public IQueryable<Dan> GetDans()

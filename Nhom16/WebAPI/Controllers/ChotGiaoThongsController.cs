@@ -9,13 +9,14 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using DataRepository;
+using DataRepository.Context;
 using DataRepository.entity;
 
 namespace WebAPI.Controllers
 {
     public class ChotGiaoThongsController : ApiController
     {
-        private ChotGTContext db = new ChotGTContext();
+        private DataContext db = new DataContext();
 
         // GET: api/ChotGiaoThongs
         public IQueryable<ChotGiaoThong> GetChotGiaoThong()

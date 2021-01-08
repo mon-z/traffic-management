@@ -8,13 +8,14 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using DataRepository.Context;
 using DataRepository.entity;
 
 namespace WebAPI.Controllers
 {
     public class PhieuNopPhatsController : ApiController
     {
-        private ChotGTContext db = new ChotGTContext();
+        private DataContext db = new DataContext();
 
         // GET: api/PhieuNopPhats
         public IQueryable<PhieuNopPhat> GetPhieuNopPhats()

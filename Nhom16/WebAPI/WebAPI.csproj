@@ -182,6 +182,7 @@
     <Compile Include="Controllers\NgaDuongsbyMaChotController.cs" />
     <Compile Include="Controllers\NgaDuongsController.cs" />
     <Compile Include="Controllers\PhieuNopPhatsController.cs" />
+    <Compile Include="Controllers\ThongtinController.cs" />
     <Compile Include="Controllers\TraCuuThongTinsController.cs" />
     <Compile Include="Controllers\ViPhamLuatsController.cs" />
     <Compile Include="Controllers\ViPhamsController.cs" />

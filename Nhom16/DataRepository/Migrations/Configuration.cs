@@ -5,14 +5,14 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<DataRepository.entity.ChotGTContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<DataRepository.Context.DataContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(DataRepository.entity.ChotGTContext context)
+        protected override void Seed(DataRepository.Context.DataContext context)
         {
             //  This method will be called after migrating to the latest version.
 
