@@ -5,7 +5,7 @@ insert into DenGiaoThongs (ten_den) values (N'Đèn quay đầu')
 insert into DenGiaoThongs (ten_den) values (N'Đèn xe máy')
 insert into DenGiaoThongs (ten_den) values (N'Đèn đi bộ')
 
-insert into Duongs (ten_duong) values (N'Nguyên Văn Cừ')
+insert into Duongs (ten_duong) values (N'Nguyễn Văn Cừ')
 insert into Duongs (ten_duong) values (N'Trần Hưng Đạo')
 insert into Duongs (ten_duong) values (N'Nguyễn Trãi')
 insert into Duongs (ten_duong) values (N'An Dương Vương')
