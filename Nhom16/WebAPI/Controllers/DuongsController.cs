@@ -20,9 +20,9 @@ namespace WebAPI.Controllers
         private DataContext db = new DataContext();
 
         // GET: api/Duongs
-        public IQueryable<Duong> GetDuong()
+        public IEnumerable<Duong> GetDuong()
         {
-            return db.Duong;
+            return db.Duong.ToList();
         }
 
         // GET: api/Duongs/5

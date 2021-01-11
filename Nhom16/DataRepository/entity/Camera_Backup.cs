@@ -18,7 +18,7 @@ namespace DataRepository
 
         public int ma_camera { get; set; }
 
-        public virtual Duong Duong { get; set; }
+        public string TenDuong { get; set; }
 
         //public virtual Camera Camera { get; set; }
     }
