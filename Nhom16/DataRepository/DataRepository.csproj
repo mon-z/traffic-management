@@ -74,9 +74,9 @@
     <Compile Include="entity\XeDangKy.cs" />
     <Compile Include="Impl\Camera_Backup_Repository.cs" />
     <Compile Include="IRepository.cs" />
-    <Compile Include="Migrations\202101090218457_Initial.cs" />
-    <Compile Include="Migrations\202101090218457_Initial.designer.cs">
-      <DependentUpon>202101090218457_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\202101110224516_initial.cs" />
+    <Compile Include="Migrations\202101110224516_initial.designer.cs">
+      <DependentUpon>202101110224516_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,8 +87,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101090218457_Initial.resx">
-      <DependentUpon>202101090218457_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101110224516_initial.resx">
+      <DependentUpon>202101110224516_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

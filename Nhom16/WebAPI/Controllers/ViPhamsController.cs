@@ -8,13 +8,14 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using DataRepository.Context;
 using DataRepository.entity;
 
 namespace WebAPI.Controllers
 {
     public class ViPhamsController : ApiController
     {
-        private ChotGTContext db = new ChotGTContext();
+        private DataContext db = new DataContext();
 
         // GET: api/ViPhams
         public IQueryable<ViPham> GetViPhams()
@@ -58,7 +59,7 @@ namespace WebAPI.Controllers
 
         public void Put([FromBody] ViPham altViPham)
         {
-            using (var ctx = new ChotGTContext())
+            using (var ctx = new DataContext())
             {
                 var existingLuat = ctx.ViPhams.Where(s => s.ma_vi_pham == altViPham.ma_vi_pham).FirstOrDefault<ViPham>();
 

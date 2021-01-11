@@ -12,3 +12,17 @@ D:\TAI_LIEU_NAM_4\PTUD_HTTT_HD\traffic-management\Nhom16\DataRepository\obj\Debu
 D:\TAI_LIEU_NAM_4\PTUD_HTTT_HD\traffic-management\Nhom16\DataRepository\obj\Debug\DataRepository.pdb
 D:\TAI_LIEU_NAM_4\PTUD_HTTT_HD\traffic-management\Nhom16\DataRepository\obj\Debug\DataRepository.Migrations.Initial.resources
 D:\TAI_LIEU_NAM_4\PTUD_HTTT_HD\traffic-management\Nhom16\DataRepository\obj\Debug\DataRepository.csproj.GenerateResource.cache
+E:\Năm 4\PT WD HTTT HD\traffic-management\Nhom16\DataRepository\bin\Debug\DataRepository.dll.config
+E:\Năm 4\PT WD HTTT HD\traffic-management\Nhom16\DataRepository\bin\Debug\DataRepository.dll
+E:\Năm 4\PT WD HTTT HD\traffic-management\Nhom16\DataRepository\bin\Debug\DataRepository.pdb
+E:\Năm 4\PT WD HTTT HD\traffic-management\Nhom16\DataRepository\bin\Debug\EntityFramework.dll
+E:\Năm 4\PT WD HTTT HD\traffic-management\Nhom16\DataRepository\bin\Debug\EntityFramework.SqlServer.dll
+E:\Năm 4\PT WD HTTT HD\traffic-management\Nhom16\DataRepository\bin\Debug\EntityFramework.xml
+E:\Năm 4\PT WD HTTT HD\traffic-management\Nhom16\DataRepository\bin\Debug\EntityFramework.SqlServer.xml
+E:\Năm 4\PT WD HTTT HD\traffic-management\Nhom16\DataRepository\obj\Debug\DataRepository.csprojAssemblyReference.cache
+E:\Năm 4\PT WD HTTT HD\traffic-management\Nhom16\DataRepository\obj\Debug\DataRepository.csproj.CoreCompileInputs.cache
+E:\Năm 4\PT WD HTTT HD\traffic-management\Nhom16\DataRepository\obj\Debug\DataRepository.csproj.CopyComplete
+E:\Năm 4\PT WD HTTT HD\traffic-management\Nhom16\DataRepository\obj\Debug\DataRepository.dll
+E:\Năm 4\PT WD HTTT HD\traffic-management\Nhom16\DataRepository\obj\Debug\DataRepository.pdb
+E:\Năm 4\PT WD HTTT HD\traffic-management\Nhom16\DataRepository\obj\Debug\DataRepository.Migrations.initial.resources
+E:\Năm 4\PT WD HTTT HD\traffic-management\Nhom16\DataRepository\obj\Debug\DataRepository.csproj.GenerateResource.cache
