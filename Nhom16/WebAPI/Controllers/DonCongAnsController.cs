@@ -8,14 +8,13 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using DataRepository.Context;
 using DataRepository.entity;
 
 namespace WebAPI.Controllers
 {
     public class DonCongAnsController : ApiController
     {
-        private DataContext db = new DataContext();
+        private ChotGTContext db = new ChotGTContext();
 
         // GET: api/DonCongAns
         public IQueryable<DonCongAn> GetDonCongAns()

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.UtilsPages.NopPhatPages.NopPhat">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Padding="20,20,20,20" BackgroundColor="DimGray" x:Name="DetailViPham">
+                    <Label Text="Thông tin vi phạm" TextColor="DeepPink" HorizontalOptions="Center" FontSize="Large"/>
+                    <Label x:Name="nguoiViPhamTxt" TextColor="White"  FontSize="Medium"/>
+                    <Label x:Name="nguoiXuPhatTxt" TextColor="White"  FontSize="Medium"/>
+                    <Label x:Name="xeViPhamTxt" TextColor="White"  FontSize="Medium"/>
+                    <Label x:Name="diaDiemViPhamTxt" TextColor="White"  FontSize="Medium"/>
+                    <Label x:Name="tienPhatThemTxt" TextColor="White"  FontSize="Medium"/>
+                    <Label x:Name="tongTienPhatTxt" TextColor="White"  FontSize="Medium"/>
+                    <Label x:Name="thoiGianViPhamTxt" TextColor="White"  FontSize="Medium"/>
+                    <Label x:Name="thoiGianXuPhatTxt" TextColor="White"  FontSize="Medium"/>
+                    <Label x:Name="noiGiamGiuXeTxt" TextColor="White"  FontSize="Medium" IsVisible="false"/>
+                    <Label x:Name="test" TextColor="Red"  FontSize="Medium"/>
+                    <Label x:Name="test2" TextColor="Red"  FontSize="Medium"/>
+
+                    <Label Margin="20,0" Text="Thông tin các luật vi phạm" TextColor="DeepPink" HorizontalOptions="Center" FontSize="Large"/>
+                    <ListView x:Name="listView"
+                          BackgroundColor="BlueViolet"
+                          HasUnevenRows="True"
+                          Margin="15,10"
+                          HeightRequest="200">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Margin="10,0" Padding="5">
+                                        <Label Text="{Binding ma_luat}" FontSize="Medium"/>
+                                        <Label Text="{Binding ten_luat}" FontSize="Medium"/>
+                                        <Label Text="{Binding noi_dung}" FontSize="Medium"/>
+                                        <Label Text="{Binding ngay_ban_hanh}" FontSize="Medium"/>
+                                        <Label Text="{Binding muc_xu_phat}" FontSize="Medium"/>
+                                        <Label Text="{Binding mo_ta_vi_pham}" FontSize="Medium"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+
+                <StackLayout>
+                    <Label Text="Điền thông tin để nộp phạt" TextColor="DeepPink" HorizontalOptions="Center" FontSize="Large"/>
+                    <Entry IsVisible="false" x:Name="diachiEntry" Placeholder="Địa chỉ ship (nếu có nhu cầu)" TextColor="HotPink" HorizontalOptions="FillAndExpand" Margin="20,0,20,0"></Entry>
+                    <Picker x:Name="paymentPicker" Title="Chọn hình thức nộp phạt">
+                    </Picker>
+                    <!--<Label Text="{Binding SelectedItem,StringFormat='You Selected: {0}'}" />-->
+                    <Button x:Name="btn" Text="Nộp phạt" BackgroundColor="HotPink" Margin="0,15,0,0" FontAttributes="Bold" CornerRadius="10" Clicked="NopPhatBtn"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

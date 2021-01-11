@@ -29,7 +29,7 @@ namespace App1
 
         async void OnLogin(object sender, EventArgs e)
         {
-            Dans dan = await new DansWebService().Login("chanesdevil@gmail.com", "123");
+            Dans dan = await new DansWebService().Login("chanestdevil@gmail.com", "123");
             if (dan == null)
             {
                 fail.Text = "Email hoac mat khau khong dung!";

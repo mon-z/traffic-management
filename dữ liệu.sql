@@ -132,7 +132,38 @@ insert into CTDenGiaoThongs (ma_den,ma_nga_duong) values (4,13)
 
 insert into CTDenGiaoThongs (ma_den,ma_nga_duong) values (1,14)
 
-insert into DonCongAns (ten_don_cong_an,dia_chi) values (N'Công an quận 1',N'123/1 Trần Hung Đạo')
+INSERT into [dbo].[DonCongAns] ([ten_don_cong_an], [dia_chi]) VALUES (N'Không tạm giữ phương tiện', NULL)
+INSERT into [dbo].[DonCongAns] ([ten_don_cong_an], [dia_chi]) VALUES (N'Công an quận Bình Thạnh', N'152 Điện Biên Phủ, Bình Thạnh, TP HCM')
+INSERT into [dbo].[DonCongAns] ([ten_don_cong_an], [dia_chi]) VALUES (N'Công an quận 1', N'123/1 Trần Hung Đạo')
 
-insert into CongAns(email,pass_word,ho_ten,dia_chi,sdt,cmnd,ngaysinh,gioi_tinh,chuc_vu,noi_cong_tac) 
-values ('tubato1999@gmail.com','123456',N'Nguyễn Phạm Anh Tú',N'132 điện Biên Phủ','0858456152','676657327','02-06-1999','Nam',N'Công An Giao Thông',null)
+INSERT into [dbo].[CongAns] ([email], [pass_word], [ho_ten], [dia_chi], [sdt], [cmnd], [ngaysinh], [gioi_tinh], [chuc_vu], [noi_cong_tac]) VALUES (N'tubato1999@gmail.com', N'123456', N'Nguyễn Phạm Anh Tú', N'132 điện Biên Phủ', N'0858456152', N'676657327', CAST(N'1999-02-06' AS Date), N'Nam', N'Công An Giao Thông', 1)
+INSERT into [dbo].[CongAns] ([email], [pass_word], [ho_ten], [dia_chi], [sdt], [cmnd], [ngaysinh], [gioi_tinh], [chuc_vu], [noi_cong_tac]) VALUES (N'chivinh@gmail.com', N'123456', N'Nguyễn Chí Vịnh', N'Quận 1, TP HCM', N'0912318112', N'471828292', CAST(N'1985-12-12' AS Date), N'Nam', N'Công An Giao Thông', 2)
+
+INSERT into [dbo].[Dans] ([email], [pass_word], [ho_ten], [dia_chi], [sdt], [cmnd], [ngaysinh], [gioi_tinh]) VALUES (N'chanestdevil@gmail.com', N'123', N'Huỳnh Lâm Tứ', N'Quận 2, TP HCM', N'0912327121', N'52272329229', CAST(N'1999-05-19' AS Date), N'nam')
+INSERT into [dbo].[Dans] ([email], [pass_word], [ho_ten], [dia_chi], [sdt], [cmnd], [ngaysinh], [gioi_tinh]) VALUES (N'chunam47@gmail.com', N'123', N'Chu Văn Nam', N'Bình Thạnh, TP HCM', N'0911229212', N'52262324232', CAST(N'1999-02-13' AS Date), N'nam')
+INSERT into [dbo].[Dans] ([email], [pass_word], [ho_ten], [dia_chi], [sdt], [cmnd], [ngaysinh], [gioi_tinh]) VALUES (N'nguyenhoang@gmail.com', N'123', N'Nguyễn Văn Hoàng', N'Gò Vấp, TP HCM', N'0918138144', N'52273482242', CAST(N'1999-09-14' AS Date), N'nam')
+
+INSERT into [dbo].[ViPhams] ([nguoi_vi_pham], [nguoi_xu_phat], [xe_vi_pham], [dia_diem_vi_pham], [tien_phat_them], [tong_tien_phat], [thoi_gian_vi_pham], [thoi_gian_xu_phat], [noi_giam_giu_xe], [flag_da_nop_phat]) VALUES (1, 2, N'47E1-34312', N'32 Trường Chinh, Tân Phú', 50000, 450000, CAST(N'2020-11-11T11:40:00.000' AS DateTime), CAST(N'2020-11-11T12:00:00.000' AS DateTime), 1, 1)
+INSERT into [dbo].[ViPhams] ([nguoi_vi_pham], [nguoi_xu_phat], [xe_vi_pham], [dia_diem_vi_pham], [tien_phat_them], [tong_tien_phat], [thoi_gian_vi_pham], [thoi_gian_xu_phat], [noi_giam_giu_xe], [flag_da_nop_phat]) VALUES (1, 1, N'47E1-34312', N'13 Nguyễn Huệ, Quận 1', 0, 2000000, CAST(N'2020-11-30T14:00:00.000' AS DateTime), CAST(N'2020-11-30T14:20:00.000' AS DateTime), 3, 1)
+INSERT into [dbo].[ViPhams] ([nguoi_vi_pham], [nguoi_xu_phat], [xe_vi_pham], [dia_diem_vi_pham], [tien_phat_them], [tong_tien_phat], [thoi_gian_vi_pham], [thoi_gian_xu_phat], [noi_giam_giu_xe], [flag_da_nop_phat]) VALUES (2, 1, N'72B2-64311', N'234/1 Cách Mạng Tháng 8, Quận 3', 100000, 2100000, CAST(N'2020-09-28T14:00:00.000' AS DateTime), CAST(N'2020-09-28T14:20:00.000' AS DateTime), 2, 1)
+INSERT into [dbo].[ViPhams] ([nguoi_vi_pham], [nguoi_xu_phat], [xe_vi_pham], [dia_diem_vi_pham], [tien_phat_them], [tong_tien_phat], [thoi_gian_vi_pham], [thoi_gian_xu_phat], [noi_giam_giu_xe], [flag_da_nop_phat]) VALUES (2, 2, N'72B2-64311', N'100 Âu Cơ, Tân Phú', 0, 2400000, CAST(N'2020-11-30T14:20:00.000' AS DateTime), CAST(N'2020-11-30T14:40:00.000' AS DateTime), 2, 0)
+INSERT into [dbo].[ViPhams] ([nguoi_vi_pham], [nguoi_xu_phat], [xe_vi_pham], [dia_diem_vi_pham], [tien_phat_them], [tong_tien_phat], [thoi_gian_vi_pham], [thoi_gian_xu_phat], [noi_giam_giu_xe], [flag_da_nop_phat]) VALUES (1, 1, N'72B2-64311', N'31 Điện Biên Phủ, Bình Thạnh', 0, 800000, CAST(N'2020-12-12T14:20:00.000' AS DateTime), CAST(N'2020-12-12T14:50:00.000' AS DateTime), 1, 0)
+
+INSERT into [dbo].[Luats] ([ten_luat], [noi_dung], [ngay_ban_hanh], [muc_xu_phat]) VALUES (N'Điều 8 Luật Giao thông đường bộ', N'Không đội mũ bảo hiểm', CAST(N'2020-08-14' AS Date), 400000)
+INSERT into [dbo].[Luats] ([ten_luat], [noi_dung], [ngay_ban_hanh], [muc_xu_phat]) VALUES (N'Điều 9 Luật Giao thông đường bộ', N'Vượt đèn đỏ', CAST(N'2020-09-11' AS Date), 400000)
+INSERT into [dbo].[Luats] ([ten_luat], [noi_dung], [ngay_ban_hanh], [muc_xu_phat]) VALUES (N'Điều 31 Luật Giao thông đường bộ', N'Nồng độ cồn vượt quá 0.5%/1ml máu', CAST(N'2020-09-11' AS Date), 2000000)
+INSERT into [dbo].[Luats] ([ten_luat], [noi_dung], [ngay_ban_hanh], [muc_xu_phat]) VALUES (N'Điều 13 Luật Giao thông đường bộ', N'Chạy quá tốc độ quy định từ 15 đến 20km/h', CAST(N'2020-09-11' AS Date), 1500000)
+
+INSERT into [dbo].[PhieuNopPhats] ([ma_vi_pham], [tien_phat], [tien_ship], [tong_tien_nop], [phuong_thuc_dong_phat], [flag_ship], [dia_chi_ship], [ngay_nop_phat], [flag_da_nhan_xe]) VALUES (1, 450000, 150000, 600000, N'Chuyển khoản ngân hàng', 1, N'Quận 2, TP HCM', CAST(N'2020-11-23T00:00:00.000' AS DateTime), 1)
+INSERT into [dbo].[PhieuNopPhats] ([ma_vi_pham], [tien_phat], [tien_ship], [tong_tien_nop], [phuong_thuc_dong_phat], [flag_ship], [dia_chi_ship], [ngay_nop_phat], [flag_da_nhan_xe]) VALUES (3, 2100000, 0, 2100000, N'Viettel Pay', 0, NULL, CAST(N'2020-10-03T00:00:00.000' AS DateTime), 0)
+INSERT into [dbo].[PhieuNopPhats] ([ma_vi_pham], [tien_phat], [tien_ship], [tong_tien_nop], [phuong_thuc_dong_phat], [flag_ship], [dia_chi_ship], [ngay_nop_phat], [flag_da_nhan_xe]) VALUES (2, 2000000, 330000, 2330000, N'Chuyển khoản ngân hàng', 1, N'Quan 2', CAST(N'2021-01-10T18:19:00.580' AS DateTime), 0)
+
+INSERT into [dbo].[ViPhamLuats] ([ma_luat], [ma_vi_pham], [mo_ta_vi_pham]) VALUES (1, 1, N'Không đội mũ bảo hiểm')
+INSERT into [dbo].[ViPhamLuats] ([ma_luat], [ma_vi_pham], [mo_ta_vi_pham]) VALUES (3, 2, N'Nồng độ cồn vượt quá 0.5%/1ml máu')
+INSERT into [dbo].[ViPhamLuats] ([ma_luat], [ma_vi_pham], [mo_ta_vi_pham]) VALUES (3, 3, N'Phạt thêm 100000 làm hỏng máy đo cồn')
+INSERT into [dbo].[ViPhamLuats] ([ma_luat], [ma_vi_pham], [mo_ta_vi_pham]) VALUES (3, 6, N'Nồng độ cồn vượt quá 0.5%/1ml máu')
+INSERT into [dbo].[ViPhamLuats] ([ma_luat], [ma_vi_pham], [mo_ta_vi_pham]) VALUES (1, 6, N'Không đội mũ bảo hiểm')
+INSERT into [dbo].[ViPhamLuats] ([ma_luat], [ma_vi_pham], [mo_ta_vi_pham]) VALUES (1, 7, N'Không đội mũ bảo hiểm')
+INSERT into [dbo].[ViPhamLuats] ([ma_luat], [ma_vi_pham], [mo_ta_vi_pham]) VALUES (2, 7, N'Vượt đèn đỏ')
+
+

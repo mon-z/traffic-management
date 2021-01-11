@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.UtilsPages.NopPhatPages.ListChuaNopPhat">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid HeightRequest="70" Margin="0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="userName" FontSize="Medium" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                <Button Text="Trang chu" Grid.Column="2" Clicked="toHome"/>
+            </Grid>
+            <ListView x:Name="listView"
+                      BackgroundColor="BlueViolet"
+                      HasUnevenRows="True"
+                      ItemSelected="OnListViewItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="5,15">
+                                <Label Text="{Binding dia_diem_vi_pham}"  TextColor="White" FontSize="Medium"/>
+                                <Label Text="{Binding thoi_gian_xu_phat}"  TextColor="White" FontSize="Medium"/>
+                                <Label Text="{Binding tong_tien_phat}"  TextColor="White" FontSize="Medium"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

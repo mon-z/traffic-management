@@ -8,14 +8,13 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using DataRepository.Context;
 using DataRepository.entity;
 
 namespace WebAPI.Controllers
 {
     public class DansController : ApiController
     {
-        private DataContext db = new DataContext();
+        private ChotGTContext db = new ChotGTContext();
 
         // GET: api/Dans
         public IQueryable<Dan> GetDans()
@@ -29,6 +28,28 @@ namespace WebAPI.Controllers
         {
             Dan dan = db.Dans.Find(id);
             if (dan == null)
+            {
+                return NotFound();
+            }
+            return Ok(dan);
+        }
+
+        public IHttpActionResult GetTenDan(int idDan)
+        {
+            Dan dan = db.Dans.Find(idDan);
+            if (dan == null)
+            {
+                return NotFound();
+            }
+            return Ok(dan.ho_ten);
+        }
+
+        // GET: api/Dans/5
+        [ResponseType(typeof(Dan))]
+        public IHttpActionResult GetDanLogin(string email, string password)
+        {
+            Dan dan = db.Dans.Where(d => d.email == email).FirstOrDefault();
+            if (dan == null || dan.pass_word != password)
             {
                 return NotFound();
             }

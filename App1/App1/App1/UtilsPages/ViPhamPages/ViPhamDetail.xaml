@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.UtilsPages.ViPhamPage.ViPhamDetail">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout Padding="20" BackgroundColor="DimGray" x:Name="DetailViPham">
+            <Label Text="Thông tin vi phạm" TextColor="White" HorizontalOptions="Center" FontSize="Large"/>
+            <Label x:Name="nguoiViPhamTxt" TextColor="White"  FontSize="Medium"/>
+            <Label x:Name="nguoiXuPhatTxt" TextColor="White"  FontSize="Medium"/>
+            <Label x:Name="xeViPhamTxt" TextColor="White"  FontSize="Medium"/>
+            <Label x:Name="diaDiemViPhamTxt" TextColor="White"  FontSize="Medium"/>
+            <Label x:Name="tienPhatThemTxt" TextColor="White"  FontSize="Medium"/>
+            <Label x:Name="tongTienPhatTxt" TextColor="White"  FontSize="Medium"/>
+            <Label x:Name="thoiGianViPhamTxt" TextColor="White"  FontSize="Medium"/>
+            <Label x:Name="thoiGianXuPhatTxt" TextColor="White"  FontSize="Medium"/>
+            <Label x:Name="noiGiamGiuXeTxt" TextColor="White"  FontSize="Medium" IsVisible="False"/>
+            <Label x:Name="flagNopPhatTxt" TextColor="White"  FontSize="Medium"/>
+
+            <StackLayout x:Name="PhieuNopPhatSection" IsVisible="false" HeightRequest="200">
+                <Label Margin="20,0" Text="Thông tin phiếu nộp phạt" TextColor="DeepPink" HorizontalOptions="Center" FontSize="Large"/>
+                <Label x:Name="diaChiShipTxt" TextColor="White"  FontSize="Medium" IsVisible="False"/>
+                <Label x:Name="tienShipTxt" TextColor="White"  FontSize="Medium" IsVisible="False"/>
+                <Label x:Name="tongTienNopTxt" TextColor="White"  FontSize="Medium"/>
+                <Label x:Name="ngayNopPhatTxt" TextColor="White"  FontSize="Medium"/>
+                <Label x:Name="flagDaNhanXeTxt" TextColor="White"  FontSize="Medium" IsVisible="False"/>
+            </StackLayout>
+            
+            <Label Margin="20,0" Text="Thông tin các luật vi phạm" TextColor="DeepPink" HorizontalOptions="Center" FontSize="Large"/>
+            <ListView x:Name="listView"
+                      BackgroundColor="BlueViolet"
+                      HasUnevenRows="True"
+                      HeightRequest="150">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="5,15" Padding="10">
+                                <Label Text="{Binding ma_luat}" FontSize="Medium"/>
+                                <Label Text="{Binding ten_luat}" FontSize="Medium"/>
+                                <Label Text="{Binding noi_dung}" FontSize="Medium"/>
+                                <Label Text="{Binding ngay_ban_hanh}" FontSize="Medium"/>
+                                <Label Text="{Binding muc_xu_phat}" FontSize="Medium"/>
+                                <Label Text="{Binding mo_ta_vi_pham}" FontSize="Medium"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="btn" Text="Nop phat" BackgroundColor="HotPink"  Margin="0,15,0,0" FontAttributes="Bold" CornerRadius="10" Clicked="NopPhat"/>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

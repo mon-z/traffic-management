@@ -8,19 +8,40 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using DataRepository.Context;
 using DataRepository.entity;
 
 namespace WebAPI.Controllers
 {
     public class ViPhamsController : ApiController
     {
-        private DataContext db = new DataContext();
+        private ChotGTContext db = new ChotGTContext();
 
         // GET: api/ViPhams
         public IQueryable<ViPham> GetViPhams()
         {
             return db.ViPhams;
+        }
+
+        public IQueryable<ViPham> GetViPhamsByDanId(int danId)
+        {
+            IQueryable<ViPham> lstViPham = db.ViPhams.Where(d => d.nguoi_vi_pham == danId);
+            if (lstViPham == null)
+            {
+                return null;
+            }
+
+            return lstViPham;
+        }
+
+        public IQueryable<ViPham> GetViPhamsChuaNopPhatByDanId(int danChuaNopPhatId)
+        {
+            IQueryable<ViPham> lstViPham = db.ViPhams.Where(d => d.nguoi_vi_pham == danChuaNopPhatId).Where(c => c.flag_da_nop_phat == 0);
+            if (lstViPham == null)
+            {
+                return null;
+            }
+
+            return lstViPham;
         }
 
         // GET: api/ViPhams/5
@@ -32,8 +53,21 @@ namespace WebAPI.Controllers
             {
                 return NotFound();
             }
-
             return Ok(viPham);
+        }
+
+        public void Put([FromBody] ViPham altViPham)
+        {
+            using (var ctx = new ChotGTContext())
+            {
+                var existingLuat = ctx.ViPhams.Where(s => s.ma_vi_pham == altViPham.ma_vi_pham).FirstOrDefault<ViPham>();
+
+                if (existingLuat != null)
+                {
+                    existingLuat.flag_da_nop_phat = 1;
+                    ctx.SaveChanges();
+                }
+            }
         }
 
         // PUT: api/ViPhams/5

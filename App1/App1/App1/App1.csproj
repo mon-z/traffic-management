@@ -17,10 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViPhamPages\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="UtilsPages\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
@@ -30,7 +26,19 @@
     <EmbeddedResource Update="UtilsPages\Home.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="UtilsPages\ViPham\ListViPham.xaml">
+    <EmbeddedResource Update="UtilsPages\NopPhatPages\ListChuaNopPhat.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="UtilsPages\NopPhatPages\NopPhat.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="UtilsPages\NopPhatPages\XacNhanNopPhat.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="UtilsPages\ViPhamPages\ListViPham.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="UtilsPages\ViPhamPages\ViPhamDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.UtilsPages.NopPhatPages.XacNhanNopPhat">
+    <ContentPage.Content>
+        <StackLayout Padding="20,20,20,20" BackgroundColor="DimGray">
+            <Label Text="Xác nhận thông tin nộp phạt" TextColor="DeepPink" HorizontalOptions="Center" FontSize="Large"/>
+            <Label IsVisible="false" x:Name="diaChiShipTxt" TextColor="White"  FontSize="Medium"/>
+            <Label IsVisible="false" x:Name="tienShipTxt" TextColor="White"  FontSize="Medium"/>
+            <Label x:Name="tongTienPhatTxt" TextColor="White"  FontSize="Medium"/>
+            <Label x:Name="tongTienThanhToanTxt" TextColor="White"  FontSize="Medium"/>
+            <Label x:Name="hinhThucNopPhatTxt" TextColor="White"  FontSize="Medium"/>
+            <!--<Label Text="{Binding SelectedItem,StringFormat='You Selected: {0}'}" />-->
+            <Button x:Name="btn" Text="Nộp phạt" BackgroundColor="HotPink" Margin="0,15,0,0" FontAttributes="Bold" CornerRadius="10" Clicked="NopPhatBtn"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

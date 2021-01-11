@@ -21,6 +21,7 @@ namespace DataRepository.entity
 
 		public int nguoi_vi_pham { get; set; }
 		public int nguoi_xu_phat { get; set; }
+		public string dia_diem_vi_pham { get; set; }
 		public string xe_vi_pham { get; set; }
 		public int noi_giam_giu_xe { get; set; }
 	}

@@ -207,6 +207,7 @@ create table ViPhams
 	nguoi_vi_pham int,
 	nguoi_xu_phat int,
 	xe_vi_pham Nvarchar(20),
+	[dia_diem_vi_pham] [nvarchar](50),
 	tien_phat_them int,
 	tong_tien_phat int,
 	thoi_gian_vi_pham datetime,
@@ -233,12 +234,16 @@ create table ViPhamLuats
 
 create table PhieuNopPhats
 (
-	ma_phieu int identity primary key,
-	ma_vi_pham int,
-	flag_ship bit,
-	dia_chi_ship nvarchar(200),
-	ngay_nop_phat datetime,
-	flag_da_nhan_xe bit
+	[ma_phieu] [int] IDENTITY(1,1) NOT NULL,
+	[ma_vi_pham] [int] NULL,
+	[tien_phat] [int] NULL,
+	[tien_ship] [int] NULL,
+	[tong_tien_nop] [int] NULL,
+	[phuong_thuc_dong_phat] [nvarchar](50) NULL,
+	[flag_ship] [tinyint] NULL,
+	[dia_chi_ship] [nvarchar](200) NULL,
+	[ngay_nop_phat] [datetime] NULL,
+	[flag_da_nhan_xe] [tinyint] NULL,
 
 	constraint fk_PhieuNopPhats_ViPhams foreign key (ma_vi_pham) references ViPhams(ma_vi_pham)
 )

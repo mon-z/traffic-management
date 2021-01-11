@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using App1.Data;
-
+using App1.UtilsPages.ViPhamPage;
+using App1.UtilsPages.NopPhatPages;
 
 namespace App1.UtilsPages
 {
@@ -36,6 +37,11 @@ namespace App1.UtilsPages
 
         void funcHandleNopPhat(object sender, EventArgs e)
         {
+            Navigation.PushAsync(new ListChuaNopPhat { });
+        }
+        void funcHandleXemViPham(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ListViPham {});
         }
 
         void funcHandleSignOut(object sender, EventArgs e)
