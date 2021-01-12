@@ -4,20 +4,21 @@ create database QuanLyGiaoThong
 go
 use QuanLyGiaoThong
 go
-create table DenGiaoThongs
+create table DenGiaoThong
 (
 	ma_den int identity primary key,
 	ten_den Nvarchar(100),
+	link varchar(max)
 
 )
-create table ChotGiaoThongs
+create table ChotGiaoThong
 (
 	ma_ChotGT int identity primary key,
 	ten_chot_GT nvarchar(100),
 	edit int DEFAULT 0,
 	
 )
-create table Duongs
+create table Duong
 (
 	ma_duong int identity primary key,
 	ten_duong nvarchar(100)
@@ -32,17 +33,17 @@ create table CT_Duong
 
 	
 )
-create table NgaDuongs
+create table NgaDuong
 (
 	ma_nga_duong int identity primary key,
 	ma_chot_GT int,
 	ma_CT_duong int,
 	stt int,
 
-	constraint fk_NgaDuongs_ChotGiaoThongs foreign key (ma_chot_GT) references ChotGiaoThongs(ma_ChotGT),
+	constraint fk_NgaDuongs_ChotGiaoThongs foreign key (ma_chot_GT) references ChotGiaoThong(ma_ChotGT),
 	constraint fk_NgaDuongs_CTDuongs foreign key (ma_CT_duong) references CT_Duong(ma_CT_duong)
 )
-create table CTDenGiaoThongs
+create table CTDenGiaoThong
 (
 	ma_ct_den int identity primary key,
 	ma_den int,
@@ -50,11 +51,12 @@ create table CTDenGiaoThongs
 	do_ int DEFAULT 0,
 	xanh int DEFAULT 0,
 	vang int DEFAULT 0,
-	constraint fk_CTDenTinHieus_DenTinHieus foreign key (ma_den) references DenGiaoThongs(ma_den),
-	constraint fk_CTDenTinHieus_NgaDuongs foreign key (ma_nga_duong) references NgaDuongs(ma_nga_duong)
+	link varchar(max) ,
+	constraint fk_CTDenTinHieus_DenTinHieus foreign key (ma_den) references DenGiaoThong(ma_den),
+	constraint fk_CTDenTinHieus_NgaDuongs foreign key (ma_nga_duong) references NgaDuong(ma_nga_duong)
 )
 
-create table Cameras
+create table Camera
 (
 	ma_camera int identity primary key,
 	ip_ nvarchar(16),
@@ -63,18 +65,18 @@ create table Cameras
 	ma_duong int,
 	stt int
 
-	constraint fk_Cameras_NgaDuongs foreign key (ma_nga_duong) references NgaDuongs(ma_nga_duong),
-	constraint fk_Cameras_Duongs foreign key (ma_duong) references Duongs(ma_duong)
+	constraint fk_Cameras_NgaDuongs foreign key (ma_nga_duong) references NgaDuong(ma_nga_duong),
+	constraint fk_Cameras_Duongs foreign key (ma_duong) references Duong(ma_duong)
 )
 
-create table TraCuuThongTins
+create table TraCuuThongTin
 (
 	MaTraCuu int identity primary key,
 	ma_duong int,
 	ThoiGian date,
 	images nvarchar(200),
 
-	constraint fk_TraCuuThongTin_Duongs foreign key (ma_duong) references Duongs (ma_duong)
+	constraint fk_TraCuuThongTin_Duongs foreign key (ma_duong) references Duong (ma_duong)
 )
 create table Camera_Backup
 (
@@ -83,10 +85,10 @@ create table Camera_Backup
 	ma_camera int,
 	images Nvarchar(200),
 
-	constraint fk_CameraBackup_Cameras foreign key (ma_camera) references Cameras(ma_camera)
+	constraint fk_CameraBackup_Cameras foreign key (ma_camera) references Camera(ma_camera)
 )
 
-create table DonCongAns
+create table DonCongAn
 (
 	ma_don_cong_an int identity primary key,
 	ten_don_cong_an Nvarchar(200),
@@ -94,7 +96,7 @@ create table DonCongAns
 )
 
 
-create table CongAns
+create table CongAn
 (
 	ma_cong_an int identity primary key,
 	email Nvarchar(100),
@@ -108,10 +110,10 @@ create table CongAns
 	chuc_vu Nvarchar(50),
 	noi_cong_tac int
 
-	constraint fk_CongAns_DonCongAns foreign key (noi_cong_tac) references DonCongAns(ma_don_cong_an)
+	constraint fk_CongAns_DonCongAns foreign key (noi_cong_tac) references DonCongAn(ma_don_cong_an)
 )
 
-create table Dans
+create table Dan
 (
 	ma_dan int identity primary key,
 	email Nvarchar(100),
@@ -124,7 +126,7 @@ create table Dans
 	gioi_tinh Nvarchar(3)
 )
 
-create table DanDangKies
+create table DanDangKy
 (
 	ma_dang_ky int identity primary key,
 	email Nvarchar(100),
@@ -137,10 +139,10 @@ create table DanDangKies
 	gioi_tinh varchar(3),
 	nguoi_duyet int
 
-	constraint fk_DanDangKys_CongAns foreign key (nguoi_duyet) references CongAns(ma_cong_an)
+	constraint fk_DanDangKys_CongAns foreign key (nguoi_duyet) references CongAn(ma_cong_an)
 )
 
-create table Luats
+create table Luat
 (
 	ma_luat int identity primary key,
 	ten_luat Nvarchar(100),
@@ -149,7 +151,7 @@ create table Luats
 	muc_xu_phat int
 )
 
-create table Xes
+create table Xe
 (
 	bien_so_xe Nvarchar(20) primary key,
 	chu_xe int,
@@ -169,11 +171,11 @@ create table Xes
 	so_ten_GCN Nvarchar(20),
 	hinh_anh_xe Nvarchar(100)
 
-	constraint fk_Xes_DonCongAns foreign key (don_vi_kiem_dinh) references DonCongAns(ma_don_cong_an),
-	constraint fk_Xess_Dans foreign key (chu_xe) references Dans(ma_dan)
+	constraint fk_Xes_DonCongAns foreign key (don_vi_kiem_dinh) references DonCongAn(ma_don_cong_an),
+	constraint fk_Xess_Dans foreign key (chu_xe) references Dan(ma_dan)
 )
 
-create table XeDangKies
+create table XeDangKy
 (
 	ma_dang_ky int identity primary key,
 	chu_xe int,
@@ -182,11 +184,11 @@ create table XeDangKies
 	hinh_anh_xe Nvarchar(100),
 	nguoi_duyet int
 
-	constraint fk_Xes_Dans foreign key (chu_xe) references Dans(ma_dan),
-	constraint fk_Xes_CongAns foreign key (nguoi_duyet) references CongAns(ma_cong_an),
+	constraint fk_Xes_Dans foreign key (chu_xe) references Dan(ma_dan),
+	constraint fk_Xes_CongAns foreign key (nguoi_duyet) references CongAn(ma_cong_an),
 )
 
-create table DoiChuXes
+create table DoiChuXe
 (
 	ma_dang_ky int identity primary key,
 	bien_so_xe Nvarchar(20),
@@ -195,13 +197,13 @@ create table DoiChuXes
 	ngay_chuyen_nhuong date,
 	nguoi_duyet int
 
-	constraint fk_Xes_ChuXeCus foreign key (chu_xe_cu) references Dans(ma_dan),
-	constraint fk_Xes_ChuXeMois foreign key (chu_xe_moi) references Dans(ma_dan),
-	constraint fk_DoiChuXes_Xes foreign key (bien_so_xe) references Xes(bien_so_xe),
-	constraint fk_DoiChuXes_CongAns foreign key (nguoi_duyet) references CongAns(ma_cong_an),
+	constraint fk_Xes_ChuXeCus foreign key (chu_xe_cu) references Dan(ma_dan),
+	constraint fk_Xes_ChuXeMois foreign key (chu_xe_moi) references Dan(ma_dan),
+	constraint fk_DoiChuXes_Xes foreign key (bien_so_xe) references Xe(bien_so_xe),
+	constraint fk_DoiChuXes_CongAns foreign key (nguoi_duyet) references CongAn(ma_cong_an),
 )
 
-create table ViPhams
+create table ViPham
 (
 	ma_vi_pham int identity primary key,
 	nguoi_vi_pham int,
@@ -215,10 +217,10 @@ create table ViPhams
 	noi_giam_giu_xe int,
 	flag_da_nop_phat bit
 
-	constraint fk_ViPhams_Dans foreign key (nguoi_vi_pham) references Dans(ma_dan),
-	constraint fk_ViPhams_CongAns foreign key (nguoi_xu_phat) references CongAns(ma_cong_an),
-	constraint fk_ViPhams_Xes foreign key (xe_vi_pham) references Xes(bien_so_xe),
-	constraint fk_ViPhams_DonCongAns foreign key (noi_giam_giu_xe) references DonCongAns(ma_don_cong_an)
+	constraint fk_ViPhams_Dans foreign key (nguoi_vi_pham) references Dan(ma_dan),
+	constraint fk_ViPhams_CongAns foreign key (nguoi_xu_phat) references CongAn(ma_cong_an),
+	constraint fk_ViPhams_Xes foreign key (xe_vi_pham) references Xe(bien_so_xe),
+	constraint fk_ViPhams_DonCongAns foreign key (noi_giam_giu_xe) references DonCongAn(ma_don_cong_an)
 )
 
 create table ViPhamLuats
@@ -228,11 +230,11 @@ create table ViPhamLuats
 	ma_vi_pham int,
 	mo_ta_vi_pham Nvarchar(100)
 
-	constraint fk_ViPhamLuats_Luats foreign key (ma_luat) references Luats(ma_luat),
-	constraint fk_ViPhamLuats_ViPhams foreign key (ma_vi_pham) references ViPhams(ma_vi_pham)
+	constraint fk_ViPhamLuats_Luats foreign key (ma_luat) references Luat(ma_luat),
+	constraint fk_ViPhamLuats_ViPhams foreign key (ma_vi_pham) references ViPham(ma_vi_pham)
 )
 
-create table PhieuNopPhats
+create table PhieuNopPhat
 (
 	[ma_phieu] [int] IDENTITY(1,1) NOT NULL,
 	[ma_vi_pham] [int] NULL,
@@ -245,5 +247,5 @@ create table PhieuNopPhats
 	[ngay_nop_phat] [datetime] NULL,
 	[flag_da_nhan_xe] [tinyint] NULL,
 
-	constraint fk_PhieuNopPhats_ViPhams foreign key (ma_vi_pham) references ViPhams(ma_vi_pham)
+	constraint fk_PhieuNopPhats_ViPhams foreign key (ma_vi_pham) references ViPham(ma_vi_pham)
 )
