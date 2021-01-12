@@ -167,5 +167,16 @@ INSERT into  [ViPhamLuat] ([ma_luat], [ma_vi_pham], [mo_ta_vi_pham]) VALUES (3, 
 INSERT into  [ViPhamLuat] ([ma_luat], [ma_vi_pham], [mo_ta_vi_pham]) VALUES (1, 6, N'Không đội mũ bảo hiểm')
 INSERT into  [ViPhamLuat] ([ma_luat], [ma_vi_pham], [mo_ta_vi_pham]) VALUES (1, 7, N'Không đội mũ bảo hiểm')
 INSERT into  [ViPhamLuat] ([ma_luat], [ma_vi_pham], [mo_ta_vi_pham]) VALUES (2, 7, N'Vượt đèn đỏ')
+                                                     
+insert into DanDangKy (ma_dang_ky, email, pass_word, ho_ten, dia_chi, sdt, cmnd, ngaysinh, gioi_tinh, nguoi_duyet) values (1, N'chanestdevil@gmail.com',N'123', N'Huỳnh Lâm Tứ', N'Quận 2, TP HCM', N'0912327121', N'52272329229', CAST(N'1999-05-19' AS Date), N'nam', 2)
+insert into DanDangKy (ma_dang_ky, email, pass_word, ho_ten, dia_chi, sdt, cmnd, ngaysinh, gioi_tinh, nguoi_duyet) values (2, N'chunam47@gmail.com', N'123', N'Chu Văn Nam', N'Bình Thạnh, TP HCM', N'0911229212', N'52262324232', CAST(N'1999-02-13' AS Date), N'nam', 2)  
+insert into DanDangKy (ma_dang_ky, email, pass_word, ho_ten, dia_chi, sdt, cmnd, ngaysinh, gioi_tinh, nguoi_duyet) values (3, N'nguyenhoang@gmail.com', N'123', N'Nguyễn Văn Hoàng', N'Gò Vấp, TP HCM', N'0918138144', N'52273482242', CAST(N'1999-09-14' AS Date), N'nam', 4)       
 
-
+insert into Xe (bien_so_xe, chu_xe, nhan_hieu, mau_sac, so_khung, loai_phuong_tien, so_may, kich_thuoc_bao, kich_thuoc_thung_hang, khoi_luong_xe, khoi_luong_cho_phep, so_nguoi_cho_phep, khoi_luong_toan_bo_cho_phep, don_vi_kiem_dinh, ngay_kiem_dinh, so_ten_GCN,hinh_anh_xe) values (N'62-S1_07209', 1, N'Honda', N'Do', N'E412-VN128524', N'Xe hai banh', N'E412-VN128524', N'2.034mm x 740mm x 1.152mm', N'0', 134, 200, 2, 334, 2, CAST(N'2020-05-19' AS Date), N'KA-2934681', N'12345.jpg')     
+insert into Xe (bien_so_xe, chu_xe, nhan_hieu, mau_sac, so_khung, loai_phuong_tien, so_may, kich_thuoc_bao, kich_thuoc_thung_hang, khoi_luong_xe, khoi_luong_cho_phep, so_nguoi_cho_phep, khoi_luong_toan_bo_cho_phep, don_vi_kiem_dinh, ngay_kiem_dinh, so_ten_GCN,hinh_anh_xe) values (N'63-N2_07239', 1, N'Yamaha', N'Vang', N'E132-VN128324', N'Xe hai banh', N'E132-VN154524', N'2.034mm x 740mm x 1.152mm', N'0', 134, 200, 2, 334, 2, CAST(N'2020-05-19' AS Date), N'KA-2934341', N'12345.jpg')   
+                                                     
+insert into XeDangKy (ma_dang_ky, chu_xe, nhan_hieu, loai_phuong_tien, hinh_anh_xe, nguoi_duyet) values (1, 1, N'Honda', N'Xe hai banh', N'1234.jpg', 2)
+insert into XeDangKy (ma_dang_ky, chu_xe, nhan_hieu, loai_phuong_tien, hinh_anh_xe, nguoi_duyet) values (2, 2, N'Yamaha', N'Xe hai banh', N'1234.jpg', 2)  
+                                                     
+insert into DoiChuXe (ma_dang_ky, bien_so_xe, chu_xe_cu, chu_xe_moi, ngay_chuyen_nhuong, nguoi_duyet) values (1, N'62-S1_07209', 1, 3, CAST(N'2020-10-19' AS Date), 3) 
+insert into DoiChuXe (ma_dang_ky, bien_so_xe, chu_xe_cu, chu_xe_moi, ngay_chuyen_nhuong, nguoi_duyet) values (2, N'63-N3_07239', 1, 3, CAST(N'2020-11-20' AS Date), 3)                                                     
