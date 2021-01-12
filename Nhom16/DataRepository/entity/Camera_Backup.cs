@@ -17,7 +17,6 @@ namespace DataRepository
         public string images { get; set; }
 
         public int ma_camera { get; set; }
-
         public string TenDuong { get; set; }
 
         //public virtual Camera Camera { get; set; }

@@ -14,6 +14,7 @@ namespace DataRepository
         [Key]
         public int ma_den { get; set; }
         public string ten_den { get; set; }
+        public string link { get; set; }
 
         //public virtual ICollection<CTDenGiaoThong> Den { get; set; }
     }

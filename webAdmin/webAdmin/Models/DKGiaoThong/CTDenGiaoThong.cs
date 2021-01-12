@@ -14,5 +14,6 @@ namespace webAdmin.Models.DKGiaoThong
 
         public int ma_den { get; set; }
         public int ma_nga_duong { get; set; }
+        public string link { get; set; }
     }
 }

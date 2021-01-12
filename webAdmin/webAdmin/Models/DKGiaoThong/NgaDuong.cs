@@ -12,6 +12,7 @@ namespace webAdmin.Models.DKGiaoThong
         public string tenDuong { get; set; }
         public int ma_chot_GT { get; set; }
         public int ma_CT_duong { get; set; }
+        
 
         public List<CTDenGiaoThong> cTDens { set; get; }
     }

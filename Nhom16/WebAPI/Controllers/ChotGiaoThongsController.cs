@@ -24,14 +24,19 @@ namespace WebAPI.Controllers
             return db.ChotGiaoThong;
         }
         [ResponseType(typeof(ChotGiaoThong))]
-        public IHttpActionResult GetChotGiaoThong(string name)
+        public IHttpActionResult GetChotGiaoThong(string name1, string name2)
         {
-            string sql = "select * from ChotGiaoThongs where ten_chot_GT like N'%" + name + "%'";
+            string sql = "select * from ChotGiaoThong where ten_chot_GT = N'" + name1+" - "+ name2 + "'";
 
             var chotGiaoThong = db.ChotGiaoThong.SqlQuery(sql);
-            if (chotGiaoThong == null)
+            if (chotGiaoThong.Count() == 0)
             {
-                return NotFound();
+                sql = "select * from ChotGiaoThong where ten_chot_GT = N'" + name2 + " - " + name1 + "'";
+                chotGiaoThong = db.ChotGiaoThong.SqlQuery(sql);
+                if (chotGiaoThong.Count() == 0)
+                {
+                    return NotFound();
+                }    
             }
 
             return Ok(chotGiaoThong);

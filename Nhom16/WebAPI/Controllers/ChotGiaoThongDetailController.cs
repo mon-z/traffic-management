@@ -28,6 +28,11 @@ namespace WebAPI.Controllers
             foreach(var ctduong in chotGiaoThongDetail.ngaDuongs)
             {
                 ctduong.cTDens = (from ct in db.CTDenGiaoThong where ct.ma_nga_duong == ctduong.ma_nga_duong select ct).ToList();
+                foreach (var Ct in ctduong.cTDens)
+                {
+                    var den = db.DenGiaoThong.Find(Ct.ma_den);
+                    Ct.link = den.link;
+                }    
             }    
             return Ok(chotGiaoThongDetail);
         }

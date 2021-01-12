@@ -26,3 +26,17 @@ E:\Năm 4\PT WD HTTT HD\traffic-management\Nhom16\DataRepository\obj\Debug\DataR
 E:\Năm 4\PT WD HTTT HD\traffic-management\Nhom16\DataRepository\obj\Debug\DataRepository.pdb
 E:\Năm 4\PT WD HTTT HD\traffic-management\Nhom16\DataRepository\obj\Debug\DataRepository.Migrations.initial.resources
 E:\Năm 4\PT WD HTTT HD\traffic-management\Nhom16\DataRepository\obj\Debug\DataRepository.csproj.GenerateResource.cache
+E:\SLIDE\PTUD HTTT HD\traffic-management\Nhom16\DataRepository\bin\Debug\DataRepository.dll.config
+E:\SLIDE\PTUD HTTT HD\traffic-management\Nhom16\DataRepository\bin\Debug\DataRepository.dll
+E:\SLIDE\PTUD HTTT HD\traffic-management\Nhom16\DataRepository\bin\Debug\DataRepository.pdb
+E:\SLIDE\PTUD HTTT HD\traffic-management\Nhom16\DataRepository\bin\Debug\EntityFramework.dll
+E:\SLIDE\PTUD HTTT HD\traffic-management\Nhom16\DataRepository\bin\Debug\EntityFramework.SqlServer.dll
+E:\SLIDE\PTUD HTTT HD\traffic-management\Nhom16\DataRepository\bin\Debug\EntityFramework.xml
+E:\SLIDE\PTUD HTTT HD\traffic-management\Nhom16\DataRepository\bin\Debug\EntityFramework.SqlServer.xml
+E:\SLIDE\PTUD HTTT HD\traffic-management\Nhom16\DataRepository\obj\Debug\DataRepository.csprojAssemblyReference.cache
+E:\SLIDE\PTUD HTTT HD\traffic-management\Nhom16\DataRepository\obj\Debug\DataRepository.Migrations.initial.resources
+E:\SLIDE\PTUD HTTT HD\traffic-management\Nhom16\DataRepository\obj\Debug\DataRepository.csproj.GenerateResource.cache
+E:\SLIDE\PTUD HTTT HD\traffic-management\Nhom16\DataRepository\obj\Debug\DataRepository.csproj.CoreCompileInputs.cache
+E:\SLIDE\PTUD HTTT HD\traffic-management\Nhom16\DataRepository\obj\Debug\DataRepository.csproj.CopyComplete
+E:\SLIDE\PTUD HTTT HD\traffic-management\Nhom16\DataRepository\obj\Debug\DataRepository.dll
+E:\SLIDE\PTUD HTTT HD\traffic-management\Nhom16\DataRepository\obj\Debug\DataRepository.pdb
